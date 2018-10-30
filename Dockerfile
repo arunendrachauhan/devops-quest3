@@ -1,3 +1,4 @@
 FROM tomcat:8
-# Copy war file to webapps of tomcat 
-COPY target/*.war /usr/local/tomcat/webapps/
+MAINTAINER arun
+RUN apt-get update -y
+COPY /var/lib/jenkins/workspace/myTest/target/*.war /usr/local/tomcat/webapps/
