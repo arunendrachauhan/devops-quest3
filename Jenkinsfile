@@ -19,6 +19,8 @@ node{
     stage('Run container on App server'){
 	def dockerRun = sh "docker run --rm -p 8088:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock arunendradocker/demoimg:${ENV}"    
 	sshagent(['credapp-server']) {
+	sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.20.164 docker system prune -a -f"	
+	sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.20.164 docker pull arunendradocker/demoimg:${ENV}"
 	sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.20.164 ${dockerRun}"
 	}
 	
