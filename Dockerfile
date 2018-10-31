@@ -1,4 +1,4 @@
-FROM tomcat:8
+FROM ubuntu:16.04
 MAINTAINER arun
 RUN apt-get update -y
-ADD target/myweb.war /usr/local/tomcat/webapps/
+ADD target/myweb.war /root/
