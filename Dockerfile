@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM centos:7
 MAINTAINER arun
-RUN apt-get update -y
+RUN yum update -y
 ADD target/myweb.war /root/
