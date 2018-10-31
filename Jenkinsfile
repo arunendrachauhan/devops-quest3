@@ -3,8 +3,7 @@ node{
 	git credentialsId: 'gitcreds', url: 'https://github.com/arunendrachauhan/devops-quest3'
     }
     stage('Mvn package'){
-	sh 'cp quest4/pom.xml .'    
-        def mvnHome = tool name: 'maven-3', type: 'maven'
+	def mvnHome = tool name: 'maven-3', type: 'maven'
         def mvnCMD = "${mvnHome}/bin/mvn"
         sh "${mvnCMD} clean package"
         sh 'mv target/myweb*.war target/myweb.war'
