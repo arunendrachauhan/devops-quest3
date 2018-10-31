@@ -1,4 +1,3 @@
-FROM centos:7
+FROM tomcat:8
 MAINTAINER arun
-RUN yum update -y
-ADD target/myweb.war /root/
+COPY target/myweb.war /usr/local/tomcat/weapps/
