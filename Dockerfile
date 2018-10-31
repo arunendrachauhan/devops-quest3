@@ -1,4 +1,4 @@
 FROM ubuntu:16.04
-MAINTAINER arunS
+MAINTAINER arun
 RUN apt-get update -y
 ADD target/myweb.war /root/
